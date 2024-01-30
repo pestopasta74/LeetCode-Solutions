@@ -1,14 +1,10 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        self.nums = nums
-        self.target = target
-        self.answer = []
+        num_indices = {}
         
-        for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                if nums[i] + nums[j] == target:
-                    self.answer.append(i)
-                    self.answer.append(j)
-                    return self.answer
-                
-        
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in num_indices:
+                return [num_indices[complement], i]
+            num_indices[num] = i
+        return []
