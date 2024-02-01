@@ -10,7 +10,7 @@ class Solution:
         def sqrt_loop(x, constant_x):
             x = (x + constant_x / x) / 2 
             self.loop += 1
-            if self.loop <= 20:
+            if self.loop <= 19:
                 return sqrt_loop(x, constant_x)
             else:
                 return floor(x)
